@@ -23,7 +23,24 @@ const user = prompt("Enter your name");
 
 var peer = new Peer({config: {'iceServers': [
   { url: 'stun:stun.l.google.com:19302' },
-  { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+  {
+    urls: "stun:openrelay.metered.ca:80",
+  },
+  {
+    urls: "turn:openrelay.metered.ca:80",
+    username: "openrelayproject",
+    credential: "openrelayproject",
+  },
+  {
+    urls: "turn:openrelay.metered.ca:443",
+    username: "openrelayproject",
+    credential: "openrelayproject",
+  },
+  {
+    urls: "turn:openrelay.metered.ca:443?transport=tcp",
+    username: "openrelayproject",
+    credential: "openrelayproject",
+  },
 ]}
 });
 
